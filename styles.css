@@ -1,299 +1,258 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-
-body, html {
-    font-family: 'Open Sans', sans-serif; /* Fonte profissional */
-}
-
-h1, h2, h3 {
-    font-weight: bold;
-    color: #2B2550;
-    margin-bottom: 20px;
-}
-
-p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-a, button {
-    color: #ED3237;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-a:hover, button:hover {
-    background-color: #ED3237;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 24px;
-    }
-}
-/* Reset básico e estilos globais */
+/* Reset e tipografia básica */
 * {
-    font-weight: bold; /* Todos os textos em negrito */
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    overflow-x: hidden;
-    margin-top: 80px; /* Espaço para cabeçalho fixo */
+html {
+  scroll-behavior: smooth;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #2B2550;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #222;
+  background: #f9f9f9;
+  line-height: 1.6;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+/* Container padrão */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.header-logo {
-    height: 100px; /* Ou o tamanho que você preferir */
-}
-
-.header-text-logo {
-    /* Centraliza a imagem de texto no meio do cabeçalho */
-    display: block;
-    margin: 0 auto;
-    height: 40px; /* Ajuste a altura conforme necessário */
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-header img {
-    height: 100px; /* Ajuste a altura do logotipo */
-    cursor: pointer;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-right: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #3A2E5A;
-}
-
-.banner-img {
-    width: 100%;
-    max-height: 400px; /* Altura máxima para os banners */
-    object-fit: cover; /* Mantém as proporções e cobre a área do elemento */
-}
-
-
-    .flex-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px;
-}
-    
-
-.content {
-    flex: 3;
-    padding-right: 20px;
-}
-
-
-    .imagem-lateral {
-    flex: 1; /* A imagem ocupa um espaço proporcional */
-    width: 100%; /* A largura é baseada na proporção flex */
-    max-width: 300px; /* Largura máxima da imagem */
-    height: auto; /* A altura é automática para manter a proporção */
-    object-fit: cover; /* A imagem cobre o espaço disponível */
-    border-radius: 5px; /* Cantos arredondados */
-}
-
-    @media (max-width: 768px) {
-        .imagem-lateral {
-            width: 100%; /* Ajuste para ocupar a largura total em dispositivos móveis */
-            height: auto; /* Altura automática para manter a proporção */
-            max-width: 300px; /* Limita a largura máxima para dispositivos móveis */
-            margin-top: 20px; /* Espaço entre o texto e a imagem */
-            align-self: center; /* Centraliza no contêiner flexível */
-        }
-    }
-    
-
-footer {
-  background-color: #2B2550;
+/* HEADER */
+.site-header {
+  background: #0A2E75; /* Azul escuro */
   color: white;
-  text-align: center;
-  padding: 10px 0;
-  position: relative; /* Alterado para relative para não fixar na tela */
-  bottom: 0;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.primary-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.primary-nav a:hover {
+  color: #E63946; /* Vermelho */
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* HERO / BANNER ROTATIVO */
+.banner {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  max-height: 600px;
+}
+
+.banner .slides {
+  display: flex;
+  width: 300%;
+  animation: slideShow 18s infinite;
+}
+
+.banner .slides img {
   width: 100%;
+  height: 70vh;
+  object-fit: cover;
 }
 
-/* Container para mapa e imagem */
-.map-and-image-container {
+@keyframes slideShow {
+  0%, 20% { transform: translateX(0); }
+  25%, 45% { transform: translateX(-100%); }
+  50%, 70% { transform: translateX(-200%); }
+  75%, 100% { transform: translateX(0); }
+}
+
+/* SEÇÕES */
+.section {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #0A2E75;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #444;
+}
+
+/* CARDS */
+.cards-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #E63946; /* Vermelho destaque */
+}
+
+/* GALERIA */
+.gallery-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.responsive {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+/* CTA BAND */
+.cta-band {
+  background: #E63946;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.cta-band h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.cta-row {
+  margin-top: 1.5rem;
   display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding-bottom: 30px; /* Espaço adicional antes do rodapé */
 }
 
-.map-container iframe {
-  height: 300px; /* Altura fixa para o mapa */
-  width: 500px; /* Largura automática baseada na altura */
+/* BOTÕES */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
 }
 
-.image-container {
+.btn-accent {
+  background: white;
+  color: #E63946;
+}
+
+.btn-accent:hover {
+  background: #f3f3f3;
+}
+
+.btn-ghost {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-ghost:hover {
+  background: white;
+  color: #E63946;
+}
+
+/* FOOTER */
+.site-footer {
+  background: #0A2E75;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-grid {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
   align-items: center;
 }
 
-.image-container img {
-  max-height: 300px; /* Altura máxima para a imagem ao lado do mapa */
-  max-width: 500px; /* Largura máxima para a imagem */
-  width: auto; /* Largura automática para manter a proporção */
-  height: auto; /* Altura automática para manter a proporção */
+.copy a {
+  color: #E63946;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-/* Responsividade */
+.copy a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  header {
+  .primary-nav {
+    display: none;
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+    background: #0A2E75;
+    padding: 1rem;
+    border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
   }
 
-  .banner-img {
-    max-height: 200px; /* Altura ajustada para dispositivos móveis */
+  .primary-nav.active {
+    display: flex;
   }
 
-  .map-and-image-container {
-    flex-direction: column;
-  }
-
-  .map-container, .image-container {
-    max-width: 100%;
-  }
-
-    nav ul {
-        flex-direction: column;
-    }
-  }
-
-    .flex-container,
-    .content,
-    .imagem-lateral,
-    .mapa iframe {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-
-    .content,
-    .imagem-lateral,
-    .mapa iframe {
-        width: 90%;
-        margin-top: 20px;
-    }
-
-    
-    .imagem-lateral {
-        flex: 1; /* Toma uma proporção do espaço restante */
-        height: 100%;
-        align-self: stretch; /* Estica para preencher a altura do contêiner flexível */
-        object-fit: cover; /* Mantém a proporção da imagem */
-        border-radius: 5px; /* Cantos arredondados */
-    }
-    @media (max-width: 768px) {
-        .imagem-lateral {
-            width: 100%; /* Ajuste para ocupar a largura total em dispositivos móveis */
-            height: auto; /* Altura automática para manter a proporção */
-            max-width: 300px; /* Limita a largura máxima para dispositivos móveis */
-            margin-top: 20px; /* Espaço entre o texto e a imagem */
-            align-self: center; /* Centraliza no contêiner flexível */
-        }
-    }
-    
-
-    footer {
-        position: relative;
-    }
-}
-
-/* Container para as imagens */
-.image-container {
-  display: flex;
-  justify-content: center; /* Centraliza as imagens na horizontal */
-  align-items: center; /* Centraliza as imagens na vertical */
-  padding: 20px; /* Espaço ao redor do container */
-}
-
-.image-square {
-  width: 300px; /* Largura definida para as imagens quadradas */
-  height: 300px; /* Altura definida para as imagens quadradas */
-  object-fit: cover; /* Assegura que a imagem preencha o espaço */
-  margin: 0 10px; /* Espaço entre as imagens */
-  border-radius: 5px; /* Cantos arredondados, se desejar */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .image-container {
-    flex-direction: column; /* Imagens empilhadas verticalmente em telas menores */
-  }
-
-  .image-square {
-    margin: 10px 0; /* Espaço entre as imagens quando empilhadas */
+  .nav-toggle {
+    display: flex;
   }
 }
-
-
-.contact-info {
-    /* Adicionando mais espaço abaixo do container de contato */
-    margin-bottom: 80px; /* Aumentando a margem para 80px */
-}
-
-
-
-#contato .container {
-    margin-bottom: 40px; /* Reduz o espaço entre o texto e o mapa/imagem pela metade */
-}
-
