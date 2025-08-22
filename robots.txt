@@ -1,0 +1,8 @@
+# robots.txt para Transkav
+# Permite que todos os buscadores indexem o site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wildscampos.github.io/TransKav/sitemap.xml
